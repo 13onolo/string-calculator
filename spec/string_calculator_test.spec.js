@@ -1,4 +1,4 @@
-let calc = require('../src/string_calc');
+let calc = require('../src/string_calculator.js')
 let calculator = new calc;
 
 console.log(calculator.Add("-//1\n-2;1001,-3%%9"));
@@ -20,12 +20,12 @@ describe("StringCalculator()", () => {
 });
 describe("StringCalculator()", () => {
     it("should return error message and negative number", () => {
-        expect(calculator.Add("-//1\n-2;1001,%%9")).toBe("negative -2, not allowed");
+        expect(calculator.Add("-//1\n-2;1001,%%9")).toBe("ERROR!\n negative -2, not allowed");
     });
 });
 describe("StringCalculator()", () => {
     it("should return error message and negative numbers", () => {
-        expect(calculator.Add("-//1\n-2;1001,-3%%9")).toBe("negative -2,-3, not allowed");
+        expect(calculator.Add("-//1\n-2;1001,-3%%9")).toBe("ERROR!\n negative -2,-3, not allowed");
     });
 });
 describe("StringCalculator()", () => {
