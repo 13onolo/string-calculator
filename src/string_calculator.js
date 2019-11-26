@@ -25,11 +25,7 @@ module.exports = class StringCalculator{
 
       let negative = this.negatives(string);
 
-      try {
-         if(string.includes("-")) throw("ERROR!\n negative " + negative + " not allowed");
-      } catch (err) {
-         return err;
-      }
+      if(string.includes("-")) throw new Error("ERROR!\n negative " + negative + " not allowed");
 
       for(let i = 0; i < numbers.length; i++) {
          let number = parseInt(numbers[i]);
